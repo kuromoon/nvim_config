@@ -47,5 +47,20 @@ return require('packer').startup(function(use)
   use {'lewis6991/gitsigns.nvim'} -- OPTIONAL: for git status
   use {'romgrk/barbar.nvim'}
 
+  use {
+	  'nvim-tree/nvim-tree.lua',
+	  requires = {
+		  'nvim-tree/nvim-web-devicons', -- optional
+	  },
+	  config = function()
+		  require("nvim-tree").setup {}
+	  end
+  }
+
+  use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
 
 end)
